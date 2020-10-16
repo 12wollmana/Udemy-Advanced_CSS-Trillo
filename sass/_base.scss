@@ -22,6 +22,11 @@ These are inherited from the root to all elements.
     --line: .1rem solid var(--color-grey-light-2);
 }
 
+// CSS Variables don't work for media queries.
+$bp-largest: 75em; // 1200px
+$bp-large: 68.75em; // 1100px
+$bp-medium: 56.25em; // 900px
+
 * {
     margin: 0;
     padding: 0;
@@ -36,6 +41,12 @@ These are inherited from the root to all elements.
 html {
     box-sizing: border-box;
     font-size: 62.5%; // 1rem = 10px; 10px/16px = 62.5%
+
+    @media
+    only screen and
+    (max-width: $bp-large) {
+        font-size: 50%; // 8px
+    }
 }
 
 body {
